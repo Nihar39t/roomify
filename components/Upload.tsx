@@ -81,14 +81,10 @@ const Upload = ({ onComplete }: UploadProps) => {
 
       reader.readAsDataURL(file);
     },
-    [isSignedIn, onComplete]
+    [isSignedIn, onComplete],
   );
 
-  const allowedTypes = [
-    "image/jpeg",
-    "image/png",
-    "image/webp",
-  ];
+  const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -174,15 +170,10 @@ const Upload = ({ onComplete }: UploadProps) => {
             <h3>{file.name}</h3>
 
             <div className="progress">
-              <div
-                className="bar"
-                style={{ width: `${progress}%` }}
-              />
+              <div className="bar" style={{ width: `${progress}%` }} />
 
               <p className="status-text">
-                {progress < 100
-                  ? "Analyzing Floor Plan..."
-                  : "Redirecting..."}
+                {progress < 100 ? "Analyzing Floor Plan..." : "Redirecting..."}
               </p>
             </div>
           </div>
